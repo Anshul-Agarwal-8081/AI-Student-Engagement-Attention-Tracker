@@ -1,14 +1,50 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import StudentCard from '../components/StudentCard';
 import { WeeklyAverageChart, CategoryPieChart, SentimentBarChart } from '../components/Charts';
 import StudentTable from '../components/StudentTable';
 import AlertsPanel from '../components/AlertsPanel';
 import AISuggestions from '../components/AISuggestions';
-import { classAverageTrends, categoryDistribution, sentimentDistribution, mockStudents } from '../data/mockData';
+import { getStudents, getClassAverageTrends, getSentimentDistribution, getCategoryDistribution } from '../data/firebaseService';
 
 export default function Dashboard({ onSelectStudent }) {
-  const avgEngagement = Math.round(mockStudents.reduce((acc, curr) => acc + curr.engagementScore, 0) / mockStudents.length);
-  const atRiskCount = mockStudents.filter(s => s.atRisk).length;
+  const [students, setStudents] = useState([]);
+  const [trends, setTrends] = useState([]);
+  const [categories, setCategories] = useState([]);
+  const [sentiments, setSentiments] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      setLoading(true);
+      const [studentsData, trendsData, categoriesData, sentimentsData] = await Promise.all([
+        getStudents(),
+        getClassAverageTrends(),
+        getCategoryDistribution(),
+        getSentimentDistribution()
+      ]);
+      setStudents(studentsData);
+      setTrends(trendsData);
+      setCategories(categoriesData);
+      setSentiments(sentimentsData);
+      setLoading(false);
+    };
+    fetchData();
+  }, []);
+
+  if (loading) {
+    return (
+      <div className="h-full flex flex-col items-center justify-center p-20">
+        <div className="w-16 h-16 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin mb-4"></div>
+        <p className="text-slate-400 font-mono text-sm animate-pulse tracking-widest">SYNCHRONIZING TELEMETRY...</p>
+      </div>
+    );
+  }
+
+  const avgEngagement = students.length > 0 
+    ? Math.round(students.reduce((acc, curr) => acc + (curr.engagementScore || 0), 0) / students.length)
+    : 0;
+  const atRiskCount = students.filter(s => s.atRisk).length;
+  const highPerformance = categories.find(c => c.name === 'High')?.value || 0;
   
   return (
     <div className="space-y-8 animate-in relative">
@@ -34,12 +70,12 @@ export default function Dashboard({ onSelectStudent }) {
         />
         <StudentCard 
           label="Active Terminals" 
-          value={mockStudents.length} 
+          value={students.length} 
           colorClass="text-slate-100"
         />
         <StudentCard 
           label="Optimal Performance" 
-          value={`${Math.round((categoryDistribution.find(c => c.name === 'High').value / mockStudents.length) * 100)}%`} 
+          value={students.length > 0 ? `${Math.round((highPerformance / students.length) * 100)}%` : '0%'} 
           subtext={5} 
           trend="up"
           colorClass="text-emerald-400 text-glow"
@@ -59,30 +95,30 @@ export default function Dashboard({ onSelectStudent }) {
         <div className="lg:col-span-2 space-y-8">
           <div className="neon-card rounded-2xl p-6 md:p-8">
             <h2 className="text-[13px] font-black text-slate-300 uppercase tracking-widest mb-6">Engagement Trajectory</h2>
-            <WeeklyAverageChart data={classAverageTrends} />
+            <WeeklyAverageChart data={trends} />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="neon-card rounded-2xl p-6 md:p-8">
               <h2 className="text-[13px] font-black text-slate-300 uppercase tracking-widest mb-6">Status Matrix</h2>
-              <CategoryPieChart data={categoryDistribution} />
+              <CategoryPieChart data={categories} />
             </div>
             <div className="neon-card rounded-2xl p-6 md:p-8">
               <h2 className="text-[13px] font-black text-slate-300 uppercase tracking-widest mb-6">Sentiment Analysis</h2>
-              <SentimentBarChart data={sentimentDistribution} />
+              <SentimentBarChart data={sentiments} />
             </div>
           </div>
         </div>
 
         {/* Side Panels */}
         <div className="space-y-8">
-          <AlertsPanel />
+          <AlertsPanel students={students} />
           <AISuggestions />
         </div>
       </div>
 
       <div className="mt-8">
-        <StudentTable onSelectStudent={onSelectStudent} />
+        <StudentTable students={students} onSelectStudent={onSelectStudent} />
       </div>
     </div>
   );

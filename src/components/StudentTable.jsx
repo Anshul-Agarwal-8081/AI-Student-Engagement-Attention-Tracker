@@ -1,13 +1,12 @@
 import React, { useState } from 'react';
 import { Search, ChevronDown, ChevronUp } from 'lucide-react';
-import { mockStudents } from '../data/mockData';
 
-export default function StudentTable({ onSelectStudent }) {
+export default function StudentTable({ students = [], onSelectStudent }) {
   const [searchTerm, setSearchTerm] = useState('');
   const [sortConfig, setSortConfig] = useState({ key: 'engagementScore', direction: 'desc' });
   const [filter, setFilter] = useState('All');
 
-  const sortedStudents = [...mockStudents].sort((a, b) => {
+  const sortedStudents = [...students].sort((a, b) => {
     if (a[sortConfig.key] < b[sortConfig.key]) {
       return sortConfig.direction === 'asc' ? -1 : 1;
     }
