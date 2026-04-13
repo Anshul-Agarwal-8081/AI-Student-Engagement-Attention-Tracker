@@ -182,264 +182,129 @@ export const mockStudents = [
   },
   {
     id: 'S113',
-    name: 'Amit Kumar',
-    participation: 55,
-    quizScore: 60,
-    sentiment: 'Neutral',
-    engagementScore: 57,
-    category: 'Medium',
+    name: 'Aarav Kumar',
+    participation: 78,
+    quizScore: 85,
+    sentiment: 'Positive',
+    engagementScore: 81,
+    category: 'High',
     atRisk: false,
-    weeklyHistory: [58, 55, 60, 57],
-    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
+    weeklyHistory: [76, 79, 83, 81],
+    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
     feedback: [
-      { date: '2023-10-20', text: 'Steady performance, could improve participation.' }
+      { date: '2023-10-20', text: 'Strong performance in recent quizzes.' }
     ]
   },
   {
     id: 'S114',
-    name: 'Pooja Jain',
+    name: 'Vihaan Agarwal',
+    participation: 55,
+    quizScore: 60,
+    sentiment: 'Neutral',
+    engagementScore: 57,
+    category: 'Low',
+    atRisk: true,
+    weeklyHistory: [52, 58, 55, 57],
+    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
+    feedback: [
+      { date: '2023-10-21', text: 'Needs more focus during lectures.' }
+    ]
+  },
+  {
+    id: 'S115',
+    name: 'Saanvi Sharma',
     participation: 90,
     quizScore: 92,
     sentiment: 'Positive',
     engagementScore: 91,
     category: 'High',
     atRisk: false,
-    weeklyHistory: [88, 90, 92, 91],
+    weeklyHistory: [88, 90, 93, 91],
     sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
     feedback: [
-      { date: '2023-10-21', text: 'Outstanding work in recent assignments.' }
-    ]
-  },
-  {
-    id: 'S115',
-    name: 'Rajesh Tiwari',
-    participation: 25,
-    quizScore: 30,
-    sentiment: 'Negative',
-    engagementScore: 27,
-    category: 'Low',
-    atRisk: true,
-    weeklyHistory: [35, 30, 25, 27],
-    sentimentHistory: ['Negative', 'Negative', 'Negative', 'Negative'],
-    feedback: [
-      { date: '2023-10-22', text: 'Needs significant improvement in attendance.' }
+      { date: '2023-10-22', text: 'Outstanding participation.' }
     ]
   },
   {
     id: 'S116',
-    name: 'Kavita Rao',
-    participation: 78,
-    quizScore: 80,
-    sentiment: 'Positive',
-    engagementScore: 79,
-    category: 'Medium',
-    atRisk: false,
-    weeklyHistory: [75, 78, 80, 79],
-    sentimentHistory: ['Neutral', 'Positive', 'Positive', 'Positive'],
-    feedback: [
-      { date: '2023-10-23', text: 'Good progress in understanding topics.' }
-    ]
-  },
-  {
-    id: 'S117',
-    name: 'Suresh Nair',
-    participation: 68,
-    quizScore: 72,
-    sentiment: 'Neutral',
-    engagementScore: 70,
-    category: 'Medium',
-    atRisk: false,
-    weeklyHistory: [70, 68, 72, 70],
-    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
-    feedback: [
-      { date: '2023-10-24', text: 'Consistent but needs more initiative.' }
-    ]
-  },
-  {
-    id: 'S118',
-    name: 'Divya Sharma',
-    participation: 95,
-    quizScore: 98,
-    sentiment: 'Positive',
-    engagementScore: 96,
-    category: 'High',
-    atRisk: false,
-    weeklyHistory: [93, 95, 98, 96],
-    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
-    feedback: [
-      { date: '2023-10-25', text: 'Exceptional dedication and performance.' }
-    ]
-  },
-  {
-    id: 'S119',
-    name: 'Manoj Yadav',
-    participation: 42,
-    quizScore: 45,
-    sentiment: 'Negative',
-    engagementScore: 43,
-    category: 'Low',
-    atRisk: true,
-    weeklyHistory: [50, 45, 42, 43],
-    sentimentHistory: ['Neutral', 'Negative', 'Negative', 'Negative'],
-    feedback: [
-      { date: '2023-10-26', text: 'Struggling with basic concepts.' }
-    ]
-  },
-  {
-    id: 'S120',
-    name: 'Anjali Gupta',
-    participation: 82,
-    quizScore: 85,
-    sentiment: 'Positive',
-    engagementScore: 83,
-    category: 'High',
-    atRisk: false,
-    weeklyHistory: [80, 82, 85, 83],
-    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
-    feedback: [
-      { date: '2023-10-27', text: 'Very engaged in online discussions.' }
-    ]
-  },
-  {
-    id: 'S121',
-    name: 'Vivek Singh',
-    participation: 50,
-    quizScore: 55,
-    sentiment: 'Neutral',
-    engagementScore: 52,
-    category: 'Medium',
-    atRisk: false,
-    weeklyHistory: [55, 50, 55, 52],
-    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
-    feedback: [
-      { date: '2023-10-28', text: 'Average performance, room for improvement.' }
-    ]
-  },
-  {
-    id: 'S122',
-    name: 'Ritu Agarwal',
-    participation: 88,
-    quizScore: 90,
-    sentiment: 'Positive',
-    engagementScore: 89,
-    category: 'High',
-    atRisk: false,
-    weeklyHistory: [85, 88, 90, 89],
-    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
-    feedback: [
-      { date: '2023-10-29', text: 'Leading group projects effectively.' }
-    ]
-  },
-  {
-    id: 'S123',
-    name: 'Naveen Kumar',
-    participation: 35,
-    quizScore: 40,
-    sentiment: 'Negative',
-    engagementScore: 37,
-    category: 'Low',
-    atRisk: true,
-    weeklyHistory: [45, 40, 35, 37],
-    sentimentHistory: ['Negative', 'Negative', 'Negative', 'Negative'],
-    feedback: [
-      { date: '2023-10-30', text: 'Frequent disengagement noted.' }
-    ]
-  },
-  {
-    id: 'S124',
-    name: 'Swati Mishra',
+    name: 'Arjun Rao',
     participation: 70,
     quizScore: 75,
     sentiment: 'Neutral',
     engagementScore: 72,
     category: 'Medium',
     atRisk: false,
-    weeklyHistory: [68, 70, 75, 72],
+    weeklyHistory: [68, 72, 74, 72],
     sentimentHistory: ['Neutral', 'Neutral', 'Positive', 'Neutral'],
     feedback: [
-      { date: '2023-10-31', text: 'Good effort in quizzes.' }
+      { date: '2023-10-23', text: 'Good progress in assignments.' }
     ]
   },
   {
-    id: 'S125',
-    name: 'Arun Patel',
-    participation: 92,
-    quizScore: 95,
-    sentiment: 'Positive',
-    engagementScore: 93,
-    category: 'High',
-    atRisk: false,
-    weeklyHistory: [90, 92, 95, 93],
-    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
-    feedback: [
-      { date: '2023-11-01', text: 'Top of the class this week.' }
-    ]
-  },
-  {
-    id: 'S126',
-    name: 'Megha Saxena',
-    participation: 48,
-    quizScore: 52,
-    sentiment: 'Neutral',
-    engagementScore: 50,
-    category: 'Medium',
-    atRisk: false,
-    weeklyHistory: [52, 48, 52, 50],
-    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
-    feedback: [
-      { date: '2023-11-02', text: 'Needs to catch up on missed classes.' }
-    ]
-  },
-  {
-    id: 'S127',
-    name: 'Rakesh Verma',
-    participation: 28,
-    quizScore: 32,
+    id: 'S117',
+    name: 'Anika Singh',
+    participation: 45,
+    quizScore: 50,
     sentiment: 'Negative',
-    engagementScore: 30,
+    engagementScore: 47,
     category: 'Low',
     atRisk: true,
-    weeklyHistory: [38, 32, 28, 30],
-    sentimentHistory: ['Negative', 'Negative', 'Negative', 'Negative'],
+    weeklyHistory: [50, 48, 45, 47],
+    sentimentHistory: ['Neutral', 'Neutral', 'Negative', 'Negative'],
     feedback: [
-      { date: '2023-11-03', text: 'Significant drop in engagement.' }
+      { date: '2023-10-24', text: 'Struggling with participation.' }
     ]
   },
   {
-    id: 'S128',
-    name: 'Priyanka Das',
-    participation: 85,
-    quizScore: 87,
+    id: 'S118',
+    name: 'Rohan Mehta',
+    participation: 88,
+    quizScore: 85,
     sentiment: 'Positive',
     engagementScore: 86,
     category: 'High',
     atRisk: false,
-    weeklyHistory: [82, 85, 87, 86],
+    weeklyHistory: [83, 85, 88, 86],
     sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
     feedback: [
-      { date: '2023-11-04', text: 'Excellent teamwork skills.' }
+      { date: '2023-10-25', text: 'Excellent teamwork.' }
     ]
   },
   {
-    id: 'S129',
-    name: 'Sanjay Joshi',
+    id: 'S119',
+    name: 'Ishaan Gupta',
     participation: 62,
     quizScore: 68,
     sentiment: 'Neutral',
     engagementScore: 65,
     category: 'Medium',
     atRisk: false,
-    weeklyHistory: [65, 62, 68, 65],
+    weeklyHistory: [60, 65, 67, 65],
     sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
     feedback: [
-      { date: '2023-11-05', text: 'Solid performance overall.' }
+      { date: '2023-10-26', text: 'Consistent effort.' }
     ]
   },
   {
-    id: 'S130',
-    name: 'Kiran Reddy',
+    id: 'S120',
+    name: 'Aanya Patel',
+    participation: 30,
+    quizScore: 35,
+    sentiment: 'Negative',
+    engagementScore: 32,
+    category: 'Low',
+    atRisk: true,
+    weeklyHistory: [35, 33, 30, 32],
+    sentimentHistory: ['Negative', 'Negative', 'Negative', 'Negative'],
+    feedback: [
+      { date: '2023-10-27', text: 'Needs significant improvement.' }
+    ]
+  },
+  {
+    id: 'S121',
+    name: 'Vivaan Joshi',
     participation: 95,
-    quizScore: 97,
+    quizScore: 98,
     sentiment: 'Positive',
     engagementScore: 96,
     category: 'High',
@@ -447,104 +312,224 @@ export const mockStudents = [
     weeklyHistory: [93, 95, 97, 96],
     sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
     feedback: [
-      { date: '2023-11-06', text: 'Inspiring others with her enthusiasm.' }
+      { date: '2023-10-28', text: 'Top of the class.' }
     ]
   },
   {
-    id: 'S131',
-    name: 'Alok Chawla',
+    id: 'S122',
+    name: 'Diya Malhotra',
+    participation: 75,
+    quizScore: 80,
+    sentiment: 'Positive',
+    engagementScore: 77,
+    category: 'Medium',
+    atRisk: false,
+    weeklyHistory: [73, 76, 79, 77],
+    sentimentHistory: ['Neutral', 'Positive', 'Positive', 'Positive'],
+    feedback: [
+      { date: '2023-10-29', text: 'Great quiz scores.' }
+    ]
+  },
+  {
+    id: 'S123',
+    name: 'Advait Kapoor',
+    participation: 50,
+    quizScore: 55,
+    sentiment: 'Neutral',
+    engagementScore: 52,
+    category: 'Low',
+    atRisk: true,
+    weeklyHistory: [55, 53, 50, 52],
+    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
+    feedback: [
+      { date: '2023-10-30', text: 'Falling behind.' }
+    ]
+  },
+  {
+    id: 'S124',
+    name: 'Kiara Das',
+    participation: 82,
+    quizScore: 87,
+    sentiment: 'Positive',
+    engagementScore: 84,
+    category: 'High',
+    atRisk: false,
+    weeklyHistory: [80, 83, 86, 84],
+    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
+    feedback: [
+      { date: '2023-10-31', text: 'Very engaged.' }
+    ]
+  },
+  {
+    id: 'S125',
+    name: 'Reyansh Mehra',
+    participation: 68,
+    quizScore: 72,
+    sentiment: 'Neutral',
+    engagementScore: 70,
+    category: 'Medium',
+    atRisk: false,
+    weeklyHistory: [66, 69, 71, 70],
+    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
+    feedback: [
+      { date: '2023-11-01', text: 'Steady performance.' }
+    ]
+  },
+  {
+    id: 'S126',
+    name: 'Myra Reddy',
     participation: 40,
     quizScore: 45,
     sentiment: 'Negative',
     engagementScore: 42,
     category: 'Low',
     atRisk: true,
-    weeklyHistory: [48, 45, 40, 42],
+    weeklyHistory: [45, 43, 40, 42],
     sentimentHistory: ['Neutral', 'Negative', 'Negative', 'Negative'],
     feedback: [
-      { date: '2023-11-07', text: 'Needs extra help with assignments.' }
+      { date: '2023-11-02', text: 'Low participation.' }
+    ]
+  },
+  {
+    id: 'S127',
+    name: 'Atharv Chawla',
+    participation: 91,
+    quizScore: 94,
+    sentiment: 'Positive',
+    engagementScore: 92,
+    category: 'High',
+    atRisk: false,
+    weeklyHistory: [89, 91, 93, 92],
+    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
+    feedback: [
+      { date: '2023-11-03', text: 'Exceptional work.' }
+    ]
+  },
+  {
+    id: 'S128',
+    name: 'Zara Verma',
+    participation: 73,
+    quizScore: 78,
+    sentiment: 'Neutral',
+    engagementScore: 75,
+    category: 'Medium',
+    atRisk: false,
+    weeklyHistory: [71, 74, 77, 75],
+    sentimentHistory: ['Neutral', 'Neutral', 'Positive', 'Neutral'],
+    feedback: [
+      { date: '2023-11-04', text: 'Good balance.' }
+    ]
+  },
+  {
+    id: 'S129',
+    name: 'Aarush Jain',
+    participation: 35,
+    quizScore: 40,
+    sentiment: 'Negative',
+    engagementScore: 37,
+    category: 'Low',
+    atRisk: true,
+    weeklyHistory: [40, 38, 35, 37],
+    sentimentHistory: ['Negative', 'Negative', 'Negative', 'Negative'],
+    feedback: [
+      { date: '2023-11-05', text: 'Needs help.' }
+    ]
+  },
+  {
+    id: 'S130',
+    name: 'Anaya Iyer',
+    participation: 87,
+    quizScore: 90,
+    sentiment: 'Positive',
+    engagementScore: 88,
+    category: 'High',
+    atRisk: false,
+    weeklyHistory: [85, 87, 89, 88],
+    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
+    feedback: [
+      { date: '2023-11-06', text: 'High achiever.' }
+    ]
+  },
+  {
+    id: 'S131',
+    name: 'Veer Khanna',
+    participation: 65,
+    quizScore: 70,
+    sentiment: 'Neutral',
+    engagementScore: 67,
+    category: 'Medium',
+    atRisk: false,
+    weeklyHistory: [63, 66, 69, 67],
+    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
+    feedback: [
+      { date: '2023-11-07', text: 'Average performance.' }
     ]
   },
   {
     id: 'S132',
-    name: 'Nisha Kapoor',
-    participation: 78,
-    quizScore: 80,
-    sentiment: 'Positive',
-    engagementScore: 79,
-    category: 'Medium',
-    atRisk: false,
-    weeklyHistory: [75, 78, 80, 79],
-    sentimentHistory: ['Neutral', 'Positive', 'Positive', 'Positive'],
+    name: 'Siya Bansal',
+    participation: 25,
+    quizScore: 30,
+    sentiment: 'Negative',
+    engagementScore: 27,
+    category: 'Low',
+    atRisk: true,
+    weeklyHistory: [30, 28, 25, 27],
+    sentimentHistory: ['Negative', 'Negative', 'Negative', 'Negative'],
     feedback: [
-      { date: '2023-11-08', text: 'Improving steadily.' }
+      { date: '2023-11-08', text: 'Very low engagement.' }
     ]
   },
   {
     id: 'S133',
-    name: 'Ravi Singh',
-    participation: 55,
-    quizScore: 60,
-    sentiment: 'Neutral',
-    engagementScore: 57,
-    category: 'Medium',
+    name: 'Arnav Saxena',
+    participation: 93,
+    quizScore: 96,
+    sentiment: 'Positive',
+    engagementScore: 94,
+    category: 'High',
     atRisk: false,
-    weeklyHistory: [58, 55, 60, 57],
-    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
+    weeklyHistory: [91, 93, 95, 94],
+    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
     feedback: [
-      { date: '2023-11-09', text: 'Good potential, needs focus.' }
+      { date: '2023-11-09', text: 'Outstanding.' }
     ]
   },
   {
     id: 'S134',
-    name: 'Anita Mehra',
-    participation: 90,
-    quizScore: 92,
+    name: 'Kavya Thakur',
+    participation: 77,
+    quizScore: 82,
     sentiment: 'Positive',
-    engagementScore: 91,
-    category: 'High',
+    engagementScore: 79,
+    category: 'Medium',
     atRisk: false,
-    weeklyHistory: [88, 90, 92, 91],
-    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
+    weeklyHistory: [75, 78, 81, 79],
+    sentimentHistory: ['Neutral', 'Positive', 'Positive', 'Positive'],
     feedback: [
-      { date: '2023-11-10', text: 'Outstanding contributions.' }
+      { date: '2023-11-10', text: 'Improving steadily.' }
     ]
   },
   {
     id: 'S135',
-    name: 'Deepak Kumar',
-    participation: 32,
-    quizScore: 38,
-    sentiment: 'Negative',
-    engagementScore: 35,
+    name: 'Rudra Pandey',
+    participation: 48,
+    quizScore: 53,
+    sentiment: 'Neutral',
+    engagementScore: 50,
     category: 'Low',
     atRisk: true,
-    weeklyHistory: [42, 38, 32, 35],
-    sentimentHistory: ['Negative', 'Negative', 'Negative', 'Negative'],
+    weeklyHistory: [53, 51, 48, 50],
+    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
     feedback: [
-      { date: '2023-11-11', text: 'Requires immediate attention.' }
+      { date: '2023-11-11', text: 'Needs motivation.' }
     ]
   },
   {
     id: 'S136',
-    name: 'Shreya Jain',
-    participation: 75,
-    quizScore: 78,
-    sentiment: 'Neutral',
-    engagementScore: 76,
-    category: 'Medium',
-    atRisk: false,
-    weeklyHistory: [72, 75, 78, 76],
-    sentimentHistory: ['Neutral', 'Neutral', 'Positive', 'Neutral'],
-    feedback: [
-      { date: '2023-11-12', text: 'Consistent progress.' }
-    ]
-  },
-  {
-    id: 'S137',
-    name: 'Vijay Tiwari',
-    participation: 85,
-    quizScore: 88,
+    name: 'Nisha Choudhury',
+    participation: 84,
+    quizScore: 89,
     sentiment: 'Positive',
     engagementScore: 86,
     category: 'High',
@@ -552,82 +537,97 @@ export const mockStudents = [
     weeklyHistory: [82, 85, 88, 86],
     sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
     feedback: [
-      { date: '2023-11-13', text: 'Very proactive in learning.' }
+      { date: '2023-11-12', text: 'Very active.' }
+    ]
+  },
+  {
+    id: 'S137',
+    name: 'Devansh Nair',
+    participation: 69,
+    quizScore: 74,
+    sentiment: 'Neutral',
+    engagementScore: 71,
+    category: 'Medium',
+    atRisk: false,
+    weeklyHistory: [67, 70, 73, 71],
+    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
+    feedback: [
+      { date: '2023-11-13', text: 'Solid work.' }
     ]
   },
   {
     id: 'S138',
-    name: 'Poonam Rao',
-    participation: 45,
-    quizScore: 50,
-    sentiment: 'Neutral',
-    engagementScore: 47,
+    name: 'Aisha Gill',
+    participation: 32,
+    quizScore: 37,
+    sentiment: 'Negative',
+    engagementScore: 34,
     category: 'Low',
-    atRisk: false,
-    weeklyHistory: [50, 48, 45, 47],
-    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
+    atRisk: true,
+    weeklyHistory: [37, 35, 32, 34],
+    sentimentHistory: ['Negative', 'Negative', 'Negative', 'Negative'],
     feedback: [
-      { date: '2023-11-14', text: 'Needs encouragement to participate more.' }
+      { date: '2023-11-14', text: 'Struggling.' }
     ]
   },
   {
     id: 'S139',
-    name: 'Harish Nair',
-    participation: 68,
-    quizScore: 72,
-    sentiment: 'Neutral',
-    engagementScore: 70,
-    category: 'Medium',
+    name: 'Kabir Bhatia',
+    participation: 89,
+    quizScore: 92,
+    sentiment: 'Positive',
+    engagementScore: 90,
+    category: 'High',
     atRisk: false,
-    weeklyHistory: [70, 68, 72, 70],
-    sentimentHistory: ['Neutral', 'Neutral', 'Neutral', 'Neutral'],
+    weeklyHistory: [87, 89, 91, 90],
+    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
     feedback: [
-      { date: '2023-11-15', text: 'Reliable student.' }
+      { date: '2023-11-15', text: 'Excellent.' }
     ]
   },
   {
     id: 'S140',
-    name: 'Sunita Sharma',
-    participation: 92,
-    quizScore: 95,
-    sentiment: 'Positive',
-    engagementScore: 93,
-    category: 'High',
+    name: 'Riya Arora',
+    participation: 74,
+    quizScore: 79,
+    sentiment: 'Neutral',
+    engagementScore: 76,
+    category: 'Medium',
     atRisk: false,
-    weeklyHistory: [90, 92, 95, 93],
-    sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
+    weeklyHistory: [72, 75, 78, 76],
+    sentimentHistory: ['Neutral', 'Neutral', 'Positive', 'Neutral'],
     feedback: [
-      { date: '2023-11-16', text: 'Role model for peers.' }
+      { date: '2023-11-16', text: 'Good effort.' }
     ]
   },
   {
     id: 'S141',
-    name: 'Raj Kumar',
+    name: 'Aarav Yadav',
     participation: 38,
-    quizScore: 42,
+    quizScore: 43,
     sentiment: 'Negative',
     engagementScore: 40,
     category: 'Low',
     atRisk: true,
-    weeklyHistory: [45, 42, 38, 40],
+    weeklyHistory: [43, 41, 38, 40],
     sentimentHistory: ['Negative', 'Negative', 'Negative', 'Negative'],
     feedback: [
-      { date: '2023-11-17', text: 'Struggling to keep up.' }
+      { date: '2023-11-17', text: 'Needs support.' }
     ]
   },
   {
     id: 'S142',
-    name: 'Maya Gupta',
-    participation: 80,
-    quizScore: 83,
+    name: 'Priya Sinha',
+    participation: 86,
+    quizScore: 91,
     sentiment: 'Positive',
-    engagementScore: 81,
+    engagementScore: 88,
     category: 'High',
     atRisk: false,
-    weeklyHistory: [78, 80, 83, 81],
+    weeklyHistory: [84, 86, 90, 88],
     sentimentHistory: ['Positive', 'Positive', 'Positive', 'Positive'],
     feedback: [
-      { date: '2023-11-18', text: 'Great analytical skills.' }
+      { date: '2023-11-18', text: 'Great performance.' }
     ]
   }
 ];
