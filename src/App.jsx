@@ -17,9 +17,15 @@ export default function App() {
   const [testStatus, setTestStatus] = useState(null);
 
   useEffect(() => {
-    // Run the Google Sheets sync automatically on load (as requested).
-    // This will fetch the latest form responses and update Firebase.
+    // Run the Google Sheets sync automatically on load
     syncGoogleSheets();
+
+    // Poll for changes every 30 seconds
+    const interval = setInterval(() => {
+      syncGoogleSheets();
+    }, 30000);
+
+    return () => clearInterval(interval);
   }, []);
 
   const handleTestUpload = async () => {
