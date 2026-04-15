@@ -1,11 +1,11 @@
 import React from 'react';
 import { AlertTriangle, TrendingDown } from 'lucide-react';
-import { mockStudents } from '../data/mockData';
 
-export default function AlertsPanel() {
-  const atRiskStudents = mockStudents.filter(s => s.atRisk);
-  const droppingStudents = mockStudents.filter(s => {
+export default function AlertsPanel({ students = [] }) {
+  const atRiskStudents = students.filter(s => s.atRisk);
+  const droppingStudents = students.filter(s => {
     const hist = s.weeklyHistory;
+    if (!hist || hist.length < 3) return false;
     return hist[hist.length - 1] < hist[hist.length - 2] && hist[hist.length - 2] < hist[hist.length - 3];
   });
 

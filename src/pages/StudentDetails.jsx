@@ -1,12 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Key, Terminal, Calendar, TrendingUp, AlertTriangle } from 'lucide-react';
-import { mockStudents } from '../data/mockData';
+import { getStudentById } from '../data/firebaseService';
 import { WeeklyAverageChart, StudentPerformanceChart } from '../components/Charts';
 
 export default function StudentDetails({ studentId, onBack }) {
-  const student = mockStudents.find(s => s.id === studentId);
+  const [student, setStudent] = useState(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!student) return null;
+  useEffect(() => {
+    const fetchStudent = async () => {
+      setLoading(true);
+      const data = await getStudentById(studentId);
+      setStudent(data);
+      setLoading(false);
+    };
+    fetchStudent();
+  }, [studentId]);
+
+  if (loading) {
+    return (
+      <div className="h-full flex flex-col items-center justify-center p-20">
+        <div className="w-16 h-16 border-4 border-indigo-500/30 border-t-indigo-500 rounded-full animate-spin mb-4"></div>
+        <p className="text-slate-400 font-mono text-sm animate-pulse tracking-widest">QUERYING NODE TELEMETRY...</p>
+      </div>
+    );
+  }
+
+  if (!student) {
+    return (
+      <div className="p-20 text-center">
+        <p className="text-red-500 font-bold mb-4">NODE NOT FOUND</p>
+        <button onClick={onBack} className="text-indigo-400 font-mono text-xs hover:underline">RETURN TO BASE</button>
+      </div>
+    );
+  }
 
   const weeklyData = student.weeklyHistory.map((val, idx) => ({
     week: `CYC: ${idx + 1}`,
