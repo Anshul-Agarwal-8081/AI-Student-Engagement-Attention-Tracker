@@ -82,7 +82,7 @@ export const syncGoogleSheets = async () => {
        const timestamp = row["Timestamp"];
        if (!timestamp || new Date(timestamp) <= new Date(lastSyncTime)) continue;
        
-       const urn = row["URN NO"]?.trim();
+       const urn = row["ID"]?.trim();
        if (!urn) continue;
 
        // Extra data from sheet
@@ -128,7 +128,7 @@ export const syncGoogleSheets = async () => {
                atRisk: atRisk,
                sentimentHistory: arrayUnion(sentiment),
                weeklyHistory: arrayUnion(eqValue),
-               latestFeedback: feedbackText
+               feedback: arrayUnion({ date: new Date().toISOString().split('T')[0], text: feedbackText })
            });
        } else {
            await setDoc(studentRef, {
@@ -142,7 +142,7 @@ export const syncGoogleSheets = async () => {
                atRisk: atRisk,
                sentimentHistory: [sentiment],
                weeklyHistory: [eqValue],
-               latestFeedback: feedbackText
+               feedback: [{ date: new Date().toISOString().split('T')[0], text: feedbackText }]
            }, { merge: true });
        }
        
